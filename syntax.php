@@ -152,7 +152,7 @@ class syntax_plugin_exttab3 extends DokuWiki_Syntax_Plugin
     {
         $regex = "/\b(?:class=\")(.*?\b($class)?\b.*?)\"/";
         preg_match($regex, $attr, $matches);
-        if ($matches[2]) {
+        if (sizeof($matches) > 2 && $matches[2]) {
             // $class found in the class attribute
             return $attr;
         } elseif (empty($matches[0])) {
