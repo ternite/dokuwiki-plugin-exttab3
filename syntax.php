@@ -309,7 +309,7 @@ class syntax_plugin_exttab3 extends DokuWiki_Syntax_Plugin
         isset($this->tagsmap) || $this->setTagsmap();
         isset($this->attrmap) || $this->setAllowedAttributes();
 
-        list($state, $tag, $attr) = $data;
+        list($state, $tag, $attr) = $data + [null, null, null];
 
         switch ($state) {
             case DOKU_LEXER_ENTER:    // open tag
